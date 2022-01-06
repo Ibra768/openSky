@@ -1,20 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img src="./assets/logo.png" />
+  <AircraftsData />
+  <AirportData />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AircraftsData from './components/AircraftsData.vue'
+import AirportData from './components/AirportData.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AircraftsData,
+    AirportData
   }
 }
 </script>
 
 <style>
+img{
+  border-radius: 100%;
+  border: 3px solid red;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
