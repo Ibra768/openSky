@@ -1,12 +1,22 @@
 <template>
-  <div>
+  <div id="airportTable">
+    <select id="selectAirport">
+      <option v-for="airport in airports" :key="airport.iata" :value="airport.iata">
+        {{airport.name}}
+      </option>
+    </select>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AirportData'
+  props: {
+    'airports' : Array
+  },
+  mounted() {
+  }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

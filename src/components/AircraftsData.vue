@@ -1,11 +1,44 @@
 <template>
-  <div>
+  <div id="aircraftsTable">
+    <h1>Departs</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Code ICAO24</th>
+        <th scope="col">Destination</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="departure in aircrafts[0]" :key="departure.icao24">
+        <th scope="row">{{departure.icao24}}</th>
+        <td>{{departure.estArrivalAirport}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h1>Arrivées</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Code ICAO24</th>
+        <th scope="col">Provenance</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="arrival in aircrafts[1]" :key="arrival.icao24">
+        <th scope="row">{{arrival.icao24}}</th>
+        <td>{{arrival.estDepartureAirport}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AircraftData'
+  props: {
+      'aircrafts' : Array
+  }
 }
 </script>
 
